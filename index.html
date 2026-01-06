@@ -3,251 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Coding Portfolio</title>
-
+<title>Medical Coding Portfolio Pro</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 <style>
-:root {
-  --bg-color: #e0e5ec;
-  --text-color: #333;
-  --neo-light: #ffffff;
-  --neo-dark: #b8bcc2;
-}
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Segoe UI', sans-serif;
-  padding-top: 90px;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Navbar */
-.navbar {
-  background: var(--bg-color);
-  box-shadow: 8px 8px 16px var(--neo-dark), -8px -8px 16px var(--neo-light);
-  border-radius: 16px;
-  padding: 0.5rem 1rem;
-  align-items: center;
-}
-.navbar .navbar-brand { font-weight: bold; color: var(--text-color); }
-.navbar-nav .nav-link {
-  color: var(--text-color);
-  margin-right: 1rem;
-  cursor: pointer;
-  border-radius: 12px;
-  padding: 5px 10px;
-  transition: box-shadow 0.3s, transform 0.2s;
-}
-.navbar-nav .nav-link:hover {
-  box-shadow: 5px 5px 10px var(--neo-dark), -5px -5px 10px var(--neo-light);
-  transform: translateY(-2px);
-}
-
-/* Buttons */
-.theme-btn, .navbar-toggler, .neo-btn {
-  border: none;
-  background: var(--bg-color);
-  border-radius: 12px;
-  box-shadow: 5px 5px 10px var(--neo-dark), -5px -5px 10px var(--neo-light);
-  transition: box-shadow 0.3s, transform 0.3s;
-  height:38px; width:42px;
-  display:flex; justify-content:center; align-items:center;
-}
-.neo-btn:hover, .theme-btn:hover, .navbar-toggler:hover {
-  box-shadow: 8px 8px 14px var(--neo-dark), -8px -8px 14px var(--neo-light);
-}
-.neo-btn:active, .theme-btn:active, .navbar-toggler:active { transform: scale(0.95); }
-
-/* Layout */
-.navbar-nav { display:flex; }
-.navbar-collapse { justify-content:flex-end; }
-@media(max-width:991px){
-  .navbar-nav { flex-direction: column; }
-  .navbar-collapse { margin-top:10px; }
-  .theme-btn { order:1; margin-right:5px; }
-  .navbar-toggler { order:2; }
-}
-
-/* Banner */
-#banner { width:100%; max-height:400px; object-fit:cover; border-radius:16px; box-shadow: 8px 8px 16px var(--neo-dark), -8px -8px 16px var(--neo-light); margin:30px 0; }
-
-/* Sections */
-.neo { background: var(--bg-color); border-radius: 16px; box-shadow: 8px 8px 16px var(--neo-dark), -8px -8px 16px var(--neo-light); padding:20px; margin-bottom:30px; }
-.neo-inset { background: var(--bg-color); border-radius:12px; box-shadow: inset 4px 4px 8px var(--neo-dark), inset -4px -4px 8px var(--neo-light); }
-
-/* Table */
-table { background: var(--bg-color); border-radius:12px; }
-th, td { vertical-align: middle; color: var(--text-color); }
-mark { background:#a8e6cf; padding:2px 4px; border-radius:4px; }
-
-/* Toasts */
-.toast-container { position: fixed; top:20px; right:20px; z-index:1055; display:flex; flex-direction:column; gap:10px; }
-.toast { border-radius:12px; padding:10px 16px; color:#fff; display:flex; align-items:center; gap:8px; font-weight:bold; transform:translateX(120%); opacity:0; transition: transform 0.4s, opacity 0.4s;}
-.toast.show { transform:translateX(0); opacity:1;}
-.toast-success { background:#28a745; }
-.toast-update { background:#0d6efd; }
-.toast-error { background:#dc3545; }
-
-/* Dark mode */
-body.dark { --bg-color:#1e1e2f; --text-color:#eee; --neo-light:#2a2a3d; --neo-dark:#14141f; }
-
+body{font-family:'Segoe UI',sans-serif; background:#e0e0e0; transition:.3s;}
+body.dark{background:#1e1e1e; color:#fff;}
+.neo{background:#e0e0e0;border-radius:20px;box-shadow:8px 8px 16px #bebebe,-8px -8px 16px #fff;padding:20px;margin-bottom:20px;transition:.3s;}
+body.dark .neo{background:#2a2a2a;box-shadow:8px 8px 16px #111,-8px -8px 16px #333;}
+.navbar{border-radius:20px;box-shadow:5px 5px 10px #bebebe,-5px -5px 10px #fff;transition:.3s;}
+body.dark .navbar{box-shadow:5px 5px 10px #111,-5px -5px 10px #333;}
+.navbar-brand{font-weight:bold;}
+.nav-link{transition:.2s;border-radius:12px;padding:6px 12px;}
+.nav-link:hover{box-shadow:inset 3px 3px 6px #bebebe,inset -3px -3px 6px #fff;color:#0d6efd !important;}
+.neo-btn{border:none;border-radius:12px;box-shadow:5px 5px 10px #bebebe,-5px -5px 10px #fff;cursor:pointer;width:42px;height:38px;display:flex;justify-content:center;align-items:center;transition:.2s;}
+.neo-btn:hover{box-shadow:8px 8px 14px #bebebe,-8px -8px 14px #fff;}
+body.dark .neo-btn{box-shadow:5px 5px 10px #111,-5px -5px 10px #333;}
+body.dark .neo-btn:hover{box-shadow:8px 8px 14px #111,-8px -8px 14px #333;}
+.table thead{background:#f0f0f0;}
+body.dark .table thead{background:#333;}
+.icon-btn{border:none;background:none;cursor:pointer;font-size:1.2rem;margin-left:6px;transition:.2s;}
+.icon-btn:hover{transform:scale(1.2);}
+#toast-container{position:fixed;top:20px;right:20px;z-index:9999;}
+.toast{min-width:220px;border-radius:16px;box-shadow:5px 5px 12px #bebebe,-5px -5px 12px #fff;margin-bottom:12px;padding:12px;display:flex;align-items:center;transition:.3s;font-weight:500;}
+.toast.success{background:#d4edda;color:#155724;}
+.toast.error{background:#f8d7da;color:#721c24;}
+.toast.info{background:#d1ecf1;color:#0c5460;}
+.toast i{margin-right:10px;font-size:1.3rem;}
+mark{background:#fffb91;border-radius:3px;padding:0 3px;}
 </style>
 </head>
-<body>
+<body class="container my-4">
 
-<!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg px-3">
-  <a class="navbar-brand">Medical Coding</a>
-  <div class="d-flex ms-auto align-items-center">
-    <button class="theme-btn neo-btn me-2" onclick="toggleTheme()" title="Theme"><i class="bi bi-circle-half"></i></button>
-    <button class="navbar-toggler neo-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg neo px-3 py-2 mb-4">
+  <a class="navbar-brand" href="#">Portfolio</a>
+  <div class="d-flex d-lg-none ms-auto gap-2 align-items-center">
+    <button class="neo-btn" id="themeBtnMobile" title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+    <button class="neo-btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+      <i class="bi bi-list"></i>
+    </button>
   </div>
-  <div class="collapse navbar-collapse" id="navMenu">
-    <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-auto">
-      <li class="nav-item"><span class="nav-link" onclick="scrollToSection('home')">Home</span></li>
-      <li class="nav-item"><span class="nav-link" onclick="scrollToSection('drugs')">Drugs</span></li>
-      <li class="nav-item"><span class="nav-link" onclick="scrollToSection('about')">About</span></li>
-      <li class="nav-item"><span class="nav-link" onclick="scrollToSection('contact')">Contact us</span></li>
+  <div class="collapse navbar-collapse" id="mobileMenu">
+    <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-lg-3 mt-2 mt-lg-0">
+      <li class="nav-item"><a class="nav-link" href="#drugs">Drugs</a></li>
+      <li class="nav-item"><a class="nav-link" href="#severity">Severity</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
     </ul>
+    <div class="d-none d-lg-block ms-lg-3">
+      <button class="neo-btn" id="themeBtn" title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+    </div>
   </div>
 </nav>
 
-<div class="container">
-
-  <!-- Banner -->
-  <img src="Banner.png" alt="Banner" id="banner">
-
-  <!-- Drugs Section -->
-  <section id="drugs" class="neo p-3 mb-4">
-    <h3>Drugs</h3>
-    <div class="neo d-flex gap-2 align-items-center mb-3">
-      <input id="search" class="form-control neo-inset" placeholder="Search drug or disease">
-      <button class="neo-btn" onclick="openModal()" title="Add"><i class="bi bi-plus-lg text-success"></i></button>
-    </div>
-    <table class="table table-bordered neo">
-      <thead>
-        <tr><th>ID</th><th>Drug</th><th>Disease</th><th>ICD</th><th>Action</th></tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
-    <div id="pagination" class="d-flex gap-2 justify-content-center"></div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="neo p-3 mb-4">
-    <h3>About</h3>
-    <p>This portfolio demonstrates Medical Coding CRUD with Google Sheets, neomorphic UI, responsive design, and dark/light theme.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="neo p-3 mb-4">
-    <h3>Contact Us</h3>
-    <form onsubmit="submitContact(event)">
-      <div class="mb-2"><input type="text" class="form-control neo-inset" id="name" placeholder="Name" required></div>
-      <div class="mb-2"><input type="email" class="form-control neo-inset" id="email" placeholder="Email" required></div>
-      <div class="mb-2"><textarea class="form-control neo-inset" id="message" placeholder="Message" required></textarea></div>
-      <button type="submit" class="neo-btn w-100"><i class="bi bi-send-fill text-primary"></i></button>
-    </form>
-  </section>
-
-  <footer class="neo text-center py-2 mb-4">&copy; 2026 Medical Coding Portfolio</footer>
-
+<!-- BANNER -->
+<div class="neo text-center mb-4">
+  <img src="Banner.png" alt="Banner" class="img-fluid rounded">
 </div>
 
-<!-- Modal -->
+<!-- DRUGS SECTION -->
+<div class="neo" id="drugs">
+<h5><i class="bi bi-capsule"></i> Drugs</h5>
+<div class="d-flex gap-2 mb-2">
+  <input id="drugsSearch" class="form-control" placeholder="Search Drugs or Diseases">
+  <button class="neo-btn text-success" onclick="openModal('drugs')" title="Add"><i class="bi bi-plus-lg"></i></button>
+</div>
+<table class="table">
+<thead><tr><th>Drug</th><th>Disease</th><th>ICD</th><th>Action</th></tr></thead>
+<tbody id="drugsBody"></tbody>
+</table>
+</div>
+
+<!-- SEVERITY SECTION -->
+<div class="neo" id="severity">
+<h5><i class="bi bi-exclamation-triangle"></i> Severity</h5>
+<div class="d-flex gap-2 mb-2">
+  <input id="severitySearch" class="form-control" placeholder="Search Severity">
+  <button class="neo-btn text-success" onclick="openModal('severity')" title="Add"><i class="bi bi-plus-lg"></i></button>
+</div>
+<table class="table">
+<thead><tr><th>Condition 1</th><th>Condition 2</th><th>Coded</th><th>Action</th></tr></thead>
+<tbody id="severityBody"></tbody>
+</table>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="neo" id="about">
+<h5><i class="bi bi-info-circle"></i> About</h5>
+<p>This portfolio demonstrates Drugs and Severity CRUD with Google Sheets, using a pro neomorphic UI and smooth UX.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="neo" id="contact">
+<h5><i class="bi bi-envelope"></i> Contact</h5>
+<input class="form-control mb-2" placeholder="Name">
+<input class="form-control mb-2" placeholder="Email">
+<textarea class="form-control mb-2" placeholder="Message"></textarea>
+<button class="btn btn-primary"><i class="bi bi-send"></i> Send</button>
+</div>
+
+<!-- MODAL -->
 <div class="modal fade" id="modal">
-  <div class="modal-dialog">
-    <div class="modal-content neo p-3">
-      <h5 id="title">Add / Edit</h5>
-      <input id="id" class="form-control neo-inset mb-2" readonly placeholder="ID auto-increment">
-      <input id="drug" class="form-control neo-inset mb-2" placeholder="Drug">
-      <input id="disease" class="form-control neo-inset mb-2" placeholder="Disease">
-      <input id="icd" class="form-control neo-inset mb-2" placeholder="ICD">
-      <input id="password" type="password" class="form-control neo-inset mb-3" placeholder="Password">
-      <button class="neo-btn w-100" onclick="save()"><i class="bi bi-check-lg text-primary"></i></button>
-    </div>
-  </div>
+<div class="modal-dialog">
+<div class="modal-content p-3 neo">
+<input type="hidden" id="id">
+<input id="c1" class="form-control mb-2" placeholder="Field 1">
+<input id="c2" class="form-control mb-2" placeholder="Field 2">
+<input id="c3" class="form-control mb-2" placeholder="Field 3">
+<input id="pw" class="form-control mb-2" placeholder="Password">
+<button class="btn btn-primary w-100" onclick="save()"><i class="bi bi-check-lg"></i> Save</button>
+</div>
+</div>
 </div>
 
-<!-- Toasts -->
-<div class="toast-container" id="toastContainer"></div>
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-const API = "https://script.google.com/macros/s/AKfycbx_e7XrePt4P6GpDo5MOD6f4SyJUSGRuKKXijY-BtDeyievgfBPurxHEeWZNEdftO19/exec"; // <--- Your Google Apps Script Web App URL
-let data=[], edit=false, page=1, size=10;
-const modal=new bootstrap.Modal(document.getElementById("modal"));
+const API="https://script.google.com/macros/s/AKfycbxhBWtpAR6cIbgTQ9_8HlaG9hB_S6rhhK-AmSI_LmimiNNqgYILGv6Ih-Cj77RxMd3G/exec"; // Replace with your Apps Script URL
+let drugsData=[], severityData=[], moduleName="", edit=false;
 
-// Load Data
-function load(){
-  fetch(`${API}?action=read`).then(r=>r.json()).then(d=>{ data=d; render(); });
+// Helper for highlighting
+function highlight(text,q){ if(!q) return text; const regex=new RegExp(`(${q})`,'gi'); return text.replace(regex,'<mark>$1</mark>'); }
+
+// Load all data
+function loadAll(){
+ fetch(`${API}?action=read&module=drugs`).then(r=>r.json()).then(d=>{drugsData=d; renderDrugs();});
+ fetch(`${API}?action=read&module=severity`).then(r=>r.json()).then(d=>{severityData=d; renderSeverity();});
 }
-load();
+loadAll();
 
-// Search
-search.oninput = ()=>{ page=1; render(); };
-
-function render(){
-  const q=search.value.trim().toLowerCase();
-  tbody.innerHTML=""; pagination.innerHTML="";
-  if(!q) return;
-  const filtered=data.filter(r=>r[1].toLowerCase().includes(q)||r[2].toLowerCase().includes(q));
-  const pages=Math.ceil(filtered.length/size);
-  const start=(page-1)*size;
-  const rows=filtered.slice(start,start+size);
-  rows.forEach(r=>{
-    tbody.innerHTML+=`<tr>
-      <td>${r[0]}</td>
-      <td>${highlight(r[1],q)}</td>
-      <td>${highlight(r[2],q)}</td>
-      <td>${r[3]}</td>
-      <td>
-        <i class="bi bi-pencil text-primary neo-btn icon" onclick="editRow('${r[0]}')"></i>
-        <i class="bi bi-trash text-danger neo-btn icon" onclick="delRow('${r[0]}')"></i>
-      </td>
-    </tr>`;
-  });
-  for(let i=1;i<=pages;i++){
-    pagination.innerHTML+=`<button class="neo-btn page-btn ${i===page?'text-primary':''}" onclick="page=${i};render()">${i}</button>`;
-  }
+// Render Drugs table
+function renderDrugs(query=""){
+ const body=document.getElementById('drugsBody'); body.innerHTML="";
+ if(!query) return;
+ drugsData.filter(r=>{
+   return r[1].toLowerCase().includes(query.toLowerCase()) || r[2].toLowerCase().includes(query.toLowerCase());
+ }).forEach(r=>{
+   body.innerHTML+=`<tr>
+     <td>${highlight(r[1],query)}</td>
+     <td>${highlight(r[2],query)}</td>
+     <td>${r[3]||''}</td>
+     <td>
+       <button class="icon-btn text-primary" onclick='editRow("drugs",${JSON.stringify(r)})'><i class="bi bi-pencil-square"></i></button>
+       <button class="icon-btn text-danger" onclick='delRow("drugs",${r[0]})'><i class="bi bi-trash"></i></button>
+     </td>
+   </tr>`;
+ });
 }
-function highlight(text,q){ return text.replace(new RegExp(`(${q})`,'gi'),'<mark>$1</mark>'); }
+
+// Render Severity table
+function renderSeverity(query=""){
+ const body=document.getElementById('severityBody'); body.innerHTML="";
+ if(!query) return;
+ severityData.filter(r=>{
+   return r[1].toLowerCase().includes(query.toLowerCase()) || r[2].toLowerCase().includes(query.toLowerCase());
+ }).forEach(r=>{
+   body.innerHTML+=`<tr>
+     <td>${highlight(r[1],query)}</td>
+     <td>${highlight(r[2],query)}</td>
+     <td>${r[3]||''}</td>
+     <td>
+       <button class="icon-btn text-primary" onclick='editRow("severity",${JSON.stringify(r)})'><i class="bi bi-pencil-square"></i></button>
+       <button class="icon-btn text-danger" onclick='delRow("severity",${r[0]})'><i class="bi bi-trash"></i></button>
+     </td>
+   </tr>`;
+ });
+}
+
+// Search events
+document.getElementById("drugsSearch").onkeyup=e=>renderDrugs(e.target.value);
+document.getElementById("severitySearch").onkeyup=e=>renderSeverity(e.target.value);
 
 // Modal
-function openModal(){ edit=false; title.innerText="Add Record"; id.value=drug.value=disease.value=icd.value=password.value=""; modal.show(); }
-function editRow(i){ edit=true; const r=data.find(x=>x[0]==i); title.innerText="Edit Record"; id.value=r[0]; drug.value=r[1]; disease.value=r[2]; icd.value=r[3]; password.value=""; modal.show(); }
+function openModal(module){ moduleName=module; edit=false; id.value=c1.value=c2.value=c3.value=pw.value=""; new bootstrap.Modal(document.getElementById("modal")).show(); }
+function editRow(module,r){ moduleName=module; edit=true; id.value=r[0]; c1.value=r[1]; c2.value=r[2]; c3.value=r[3]||""; new bootstrap.Modal(document.getElementById("modal")).show(); }
 
-// CRUD
+// Toast
+function showToast(type,msg){ const t=document.createElement("div"); t.className=`toast ${type}`; t.innerHTML=(type==='success'?'<i class="bi bi-check-circle"></i>':type==='error'?'<i class="bi bi-x-circle"></i>':'<i class="bi bi-info-circle"></i>') + msg; document.getElementById("toast-container").appendChild(t); setTimeout(()=>t.remove(),3000); }
+
+// Save
 function save(){
-  if(!password.value){ alert("Password required"); return; }
-  const act=edit?"update":"add";
-  fetch(`${API}?action=${act}&id=${id.value}&drug=${drug.value}&disease=${disease.value}&icd=${icd.value}&password=${password.value}`)
-    .then(r=>r.json()).then(res=>{
-      if(res.status==="failed") showToast("Error", "toast-error");
-      else { modal.hide(); showToast(edit?"Updated":"Added", edit?"toast-update":"toast-success"); load(); }
-    });
+ if(!pw.value){ showToast('error','Password required'); return; }
+ const params = new URLSearchParams({action: edit?"update":"add", module: moduleName, id: id.value, col1:c1.value,col2:c2.value,col3:c3.value,password:pw.value});
+ fetch(API,{method:"POST",body:params}).then(r=>r.json()).then(res=>{
+   if(res.status==='failed') showToast('error','Wrong password');
+   else { showToast('success',edit?'Updated':'Added'); loadAll(); bootstrap.Modal.getInstance(document.getElementById("modal")).hide(); }
+ });
 }
 
-function delRow(i){
-  const pwd=prompt("Enter password"); if(!pwd) return;
-  fetch(`${API}?action=delete&id=${i}&password=${pwd}`).then(r=>r.json()).then(res=>{
-    if(res.status==="failed") showToast("Error", "toast-error");
-    else { showToast("Deleted", "toast-error"); load(); }
-  });
-}
+// Delete
+function delRow(module,id){ const pwd=prompt("Password"); if(!pwd) return; const params=new URLSearchParams({action:"delete",module,id,password:pwd}); fetch(API,{method:"POST",body:params}).then(r=>r.json()).then(res=>{ if(res.status==='failed') showToast('error','Wrong password'); else { showToast('info','Deleted'); loadAll(); } }); }
 
-function showToast(msg, type="toast-success"){
-  const t=document.createElement("div"); t.className=`toast ${type}`; t.innerText=msg;
-  toastContainer.appendChild(t); setTimeout(()=>{ t.classList.add("show"); },50);
-  setTimeout(()=>{ t.classList.remove("show"); setTimeout(()=>t.remove(),500); },2000);
-}
+// Theme toggle
+document.getElementById("themeBtn").onclick =
+document.getElementById("themeBtnMobile").onclick =
+()=>document.body.classList.toggle("dark");
 
-// Theme and scroll
-function toggleTheme(){document.body.classList.toggle("dark");}
-function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
-function submitContact(e){ e.preventDefault(); alert('Message sent!'); }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
